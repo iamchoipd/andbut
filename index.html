@@ -53,10 +53,9 @@ select {
     font: inherit;
 }
 
-
-/* =========================================
+/* =========================
    설정 화면
-========================================= */
+========================= */
 
 #setupScreen {
     min-height: 100dvh;
@@ -108,11 +107,6 @@ select {
     background: white;
     font-size: 20px;
     font-weight: 800;
-    outline: none;
-}
-
-.setting-group select:focus {
-    border-color: var(--blue);
 }
 
 .rule-box {
@@ -139,27 +133,16 @@ select {
     font-size: 27px;
     font-weight: 900;
     cursor: pointer;
-    touch-action: manipulation;
 }
 
-#startBtn:active {
-    transform: scale(.98);
-}
-
-
-/* =========================================
-   게임 전체
-========================================= */
+/* =========================
+   게임
+========================= */
 
 #gameScreen {
     display: none;
     min-height: 100dvh;
 }
-
-
-/* =========================================
-   위쪽 경기장
-========================================= */
 
 #raceArea {
     position: sticky;
@@ -168,11 +151,7 @@ select {
     background: white;
     border-bottom: 3px solid #dbe2eb;
     box-shadow: 0 5px 15px rgba(0,0,0,.08);
-
-    padding:
-        max(8px, env(safe-area-inset-top))
-        12px
-        10px;
+    padding: max(8px, env(safe-area-inset-top)) 12px 10px;
 }
 
 .race-header {
@@ -188,11 +167,6 @@ select {
     font-size: clamp(17px, 3vw, 24px);
 }
 
-.race-controls {
-    display: flex;
-    gap: 6px;
-}
-
 .small-btn {
     border: 0;
     background: #edf2f8;
@@ -200,7 +174,6 @@ select {
     border-radius: 10px;
     padding: 8px 12px;
     font-weight: 800;
-    cursor: pointer;
 }
 
 #tracks {
@@ -220,7 +193,6 @@ select {
 .track-name {
     text-align: center;
     font-weight: 900;
-    white-space: nowrap;
     font-size: 14px;
 }
 
@@ -228,7 +200,6 @@ select {
     position: relative;
     height: 28px;
     border-radius: 14px;
-
     background:
         repeating-linear-gradient(
             90deg,
@@ -237,7 +208,6 @@ select {
             #e3e8f0 9%,
             #e3e8f0 10%
         );
-
     border: 2px solid #d9e0e9;
 }
 
@@ -247,11 +217,8 @@ select {
     top: 50%;
     transform: translate(-10%, -50%);
     font-size: 27px;
-
-    transition:
-        left .6s cubic-bezier(.22,.8,.28,1.2),
-        transform .25s;
-
+    transition: left .6s cubic-bezier(.22,.8,.28,1.2),
+                transform .25s;
     z-index: 2;
 }
 
@@ -278,15 +245,13 @@ select {
     font-variant-numeric: tabular-nums;
 }
 
-
-/* =========================================
-   문제 영역
-========================================= */
+/* =========================
+   문제
+========================= */
 
 #playersScroller {
     width: 100%;
     overflow-x: auto;
-    overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     padding: 12px;
     -webkit-overflow-scrolling: touch;
@@ -309,17 +274,13 @@ select {
 
     min-width: 0;
     position: relative;
-
     background: white;
     border-radius: 22px;
     border: 3px solid transparent;
     padding: 14px;
-
     display: flex;
     flex-direction: column;
-
     scroll-snap-align: center;
-
     box-shadow: 0 5px 18px rgba(0,0,0,.08);
     overflow: hidden;
 }
@@ -333,39 +294,22 @@ select {
 }
 
 @keyframes correctFlash {
-    0% {
-        border-color: transparent;
-    }
-
     30% {
         border-color: #2ac67d;
         background: #eafff4;
     }
-
-    100% {
-        border-color: transparent;
-    }
 }
 
 @keyframes wrongFlash {
-    0% {
-        border-color: transparent;
-    }
-
     30% {
         border-color: #ff6767;
         background: #fff0f0;
-    }
-
-    100% {
-        border-color: transparent;
     }
 }
 
 .player-top {
     display: flex;
     justify-content: space-between;
-    gap: 6px;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -378,7 +322,6 @@ select {
 .player-progress {
     font-weight: 900;
     color: var(--blue);
-    font-size: 15px;
 }
 
 .question-box {
@@ -386,21 +329,18 @@ select {
     border-radius: 18px;
     padding: 18px 12px;
     margin-bottom: 12px;
-
     flex: 1;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     min-height: 170px;
 }
 
 .question {
     text-align: center;
-    font-size: clamp(19px, 2.1vw, 29px);
+    font-size: clamp(20px, 2.2vw, 30px);
     font-weight: 800;
-    line-height: 1.65;
+    line-height: 1.7;
     word-break: keep-all;
 }
 
@@ -409,11 +349,8 @@ select {
     padding: 1px 12px 3px;
     margin: 5px;
     border-radius: 10px;
-
     background: #fff1b9;
     color: #805c00;
-
-    font-weight: 900;
 }
 
 .status {
@@ -421,7 +358,6 @@ select {
     font-weight: 900;
     min-height: 31px;
     margin: 3px 0 9px;
-    color: #5a6576;
 }
 
 .answers {
@@ -433,23 +369,12 @@ select {
 .answer-btn {
     width: 100%;
     min-height: 58px;
-
     border: 0;
     border-radius: 15px;
-
     background: #eaf1ff;
     color: #165ed1;
-
     font-size: clamp(20px, 2.2vw, 28px);
     font-weight: 900;
-
-    cursor: pointer;
-    touch-action: manipulation;
-    user-select: none;
-
-    transition:
-        transform .15s,
-        opacity .25s;
 }
 
 .answer-btn:nth-child(2) {
@@ -462,16 +387,10 @@ select {
     color: #087848;
 }
 
-.answer-btn:active:not(:disabled) {
-    transform: scale(.97);
-}
-
 .answer-btn:disabled {
     opacity: .38;
-    cursor: default;
 }
 
-/* 첫 오답 보기 제거 */
 .answer-btn.removed {
     display: none;
 }
@@ -480,17 +399,13 @@ select {
     position: absolute;
     inset: 0;
     z-index: 20;
-
     background: rgba(25,33,47,.86);
     color: white;
-
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-    padding: 20px;
 }
 
 .penalty-overlay.show {
@@ -504,7 +419,7 @@ select {
 .penalty-text {
     font-size: clamp(22px, 3vw, 36px);
     font-weight: 900;
-    margin: 10px 0;
+    margin: 10px;
 }
 
 .penalty-count {
@@ -513,19 +428,10 @@ select {
     color: #ffd84d;
 }
 
-.finish-card {
-    background: linear-gradient(
-        180deg,
-        #fff,
-        #fff9da
-    );
-}
-
 .finish-message {
     text-align: center;
     font-size: clamp(25px, 3vw, 40px);
     font-weight: 900;
-    line-height: 1.5;
 }
 
 .finish-time-big {
@@ -534,23 +440,18 @@ select {
     font-weight: 900;
 }
 
-
-/* =========================================
-   시작 카운트다운
-========================================= */
+/* =========================
+   카운트다운 / 결과
+========================= */
 
 #countdownOverlay {
     display: none;
-
     position: fixed;
     inset: 0;
     z-index: 1000;
-
     background: rgba(17,25,38,.88);
-
     align-items: center;
     justify-content: center;
-
     color: white;
 }
 
@@ -559,33 +460,22 @@ select {
 }
 
 #countdownText {
-    font-size: clamp(90px, 25vw, 220px);
+    font-size: clamp(90px,25vw,220px);
     font-weight: 1000;
-    text-shadow: 0 8px 35px rgba(0,0,0,.4);
 }
 
 .countdown-start {
-    font-size: clamp(55px, 15vw, 140px) !important;
     color: #ffe44f;
 }
-
-
-/* =========================================
-   최종 결과
-========================================= */
 
 #resultOverlay {
     position: fixed;
     inset: 0;
-
     display: none;
-
     align-items: center;
     justify-content: center;
-
     padding: 20px;
     z-index: 1500;
-
     background: rgba(13,20,32,.85);
 }
 
@@ -594,15 +484,10 @@ select {
 }
 
 .result-box {
-    width: min(550px, 100%);
-    max-height: 90dvh;
-
-    overflow-y: auto;
-
+    width: min(550px,100%);
     background: white;
     border-radius: 27px;
     padding: 27px;
-
     text-align: center;
 }
 
@@ -615,14 +500,10 @@ select {
 .result-row {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-
     background: #f4f7fb;
-
     border-radius: 13px;
     padding: 13px 15px;
     margin: 8px 0;
-
     font-weight: 900;
 }
 
@@ -635,12 +516,9 @@ select {
 .result-actions button {
     flex: 1;
     padding: 15px;
-
     border: 0;
     border-radius: 14px;
-
     font-weight: 900;
-    font-size: 17px;
 }
 
 #againBtn {
@@ -650,29 +528,16 @@ select {
 
 #setupBtn {
     background: #e8edf4;
-    color: #384559;
 }
 
-
-/* =========================================
+/* =========================
    모바일
-========================================= */
+========================= */
 
-@media (max-width: 800px) {
-
-    #raceArea {
-        padding-left: 7px;
-        padding-right: 7px;
-    }
-
-    .race-header {
-        margin-bottom: 4px;
-    }
+@media (max-width:800px) {
 
     .track-row {
         grid-template-columns: 46px 1fr 52px;
-        gap: 3px;
-        min-height: 31px;
     }
 
     .track {
@@ -681,14 +546,6 @@ select {
 
     .runner {
         font-size: 24px;
-    }
-
-    .finish-flag {
-        font-size: 18px;
-    }
-
-    .track-time {
-        font-size: 11px;
     }
 
     #playersScroller {
@@ -702,1030 +559,295 @@ select {
     .player-card {
         flex: 0 0 92vw;
         min-height: calc(100dvh - 190px);
-        padding: 12px;
     }
 
     #playersArea[data-count="1"] .player-card {
         flex-basis: calc(100vw - 18px);
     }
 
-    .question-box {
-        min-height: 170px;
-    }
-
     .answer-btn {
         min-height: 64px;
     }
 }
-
-
-/* 세로가 짧은 휴대폰 */
-@media (max-height: 700px) {
-
-    .question-box {
-        min-height: 120px;
-        padding: 10px;
-    }
-
-    .answer-btn {
-        min-height: 49px;
-    }
-
-    .status {
-        margin-bottom: 4px;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-
-<!-- =====================================
-     설정 화면
-===================================== -->
-
 <div id="setupScreen">
+<div class="setup-box">
 
-    <div class="setup-box">
+<h1 class="title">🏁 이어주는 말 달리기</h1>
 
-        <h1 class="title">
-            🏁 이어주는 말 달리기
-        </h1>
-
-        <div class="subtitle">
-            그리고 · 그러나 · 그래서<br>
-            문장을 잘 읽고 결승점까지 달려 보세요!
-        </div>
-
-
-        <div class="setting-group">
-
-            <label for="playerCount">
-                👥 참가 인원
-            </label>
-
-            <select id="playerCount">
-
-                <option value="1" selected>
-                    1명
-                </option>
-
-                <option value="2">
-                    2명
-                </option>
-
-                <option value="3">
-                    3명
-                </option>
-
-                <option value="4">
-                    4명
-                </option>
-
-                <option value="5">
-                    5명
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="setting-group">
-
-            <label for="goalCount">
-                🏁 결승점까지 문제 수
-            </label>
-
-            <select id="goalCount">
-
-                <option value="5" selected>
-                    5문제
-                </option>
-
-                <option value="10">
-                    10문제
-                </option>
-
-                <option value="15">
-                    15문제
-                </option>
-
-                <option value="20">
-                    20문제
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="rule-box">
-
-            📖 새 문제가 나오면
-            <strong>3초 동안 읽기 시간</strong>이 있습니다.
-            <br>
-
-            ❌ 첫 번째 오답:
-            <strong>틀린 보기가 사라지고 3초 동안 정지합니다.</strong>
-            <br>
-
-            🚨 같은 문제 두 번째 오답:
-            <strong>출발점으로 돌아갑니다.</strong>
-            <br>
-
-            🏆 결승점에 도착하면
-            <strong>도착 시간이 기록됩니다.</strong>
-            <br>
-
-            📚 문제은행:
-            <strong>120문제</strong>
-
-        </div>
-
-
-        <button id="startBtn">
-            게임 시작
-        </button>
-
-    </div>
-
+<div class="subtitle">
+그리고 · 그러나 · 그래서<br>
+문장을 잘 읽고 결승점까지 달려 보세요!
 </div>
 
+<div class="setting-group">
+<label>👥 참가 인원</label>
 
-<!-- =====================================
-     게임 화면
-===================================== -->
+<select id="playerCount">
+<option value="1" selected>1명</option>
+<option value="2">2명</option>
+<option value="3">3명</option>
+<option value="4">4명</option>
+<option value="5">5명</option>
+</select>
+</div>
+
+<div class="setting-group">
+<label>🏁 문제 수</label>
+
+<select id="goalCount">
+<option value="5" selected>5문제</option>
+<option value="10">10문제</option>
+<option value="15">15문제</option>
+<option value="20">20문제</option>
+</select>
+</div>
+
+<div class="rule-box">
+📖 문제를 <strong>3초 동안 읽어요.</strong><br>
+❌ 첫 번째 오답은 <strong>틀린 보기가 사라지고 3초 정지!</strong><br>
+🚨 같은 문제를 두 번 틀리면 <strong>출발점으로 돌아가요.</strong><br>
+🏆 결승점에 도착하면 <strong>도착 시간을 기록해요.</strong><br>
+📚 문제는 <strong>120문제</strong>가 준비되어 있어요.
+</div>
+
+<button id="startBtn">게임 시작</button>
+
+</div>
+</div>
 
 <div id="gameScreen">
 
-    <div id="raceArea">
+<div id="raceArea">
 
-        <div class="race-header">
+<div class="race-header">
+<div class="race-title">🏃 이어주는 말 경주</div>
+<button class="small-btn" id="quitBtn">처음으로</button>
+</div>
 
-            <div class="race-title">
-                🏃 이어주는 말 경주
-            </div>
-
-            <div class="race-controls">
-
-                <button
-                    class="small-btn"
-                    id="quitBtn"
-                >
-                    처음으로
-                </button>
-
-            </div>
-
-        </div>
-
-        <div id="tracks"></div>
-
-    </div>
-
-
-    <div id="playersScroller">
-
-        <div id="playersArea"></div>
-
-    </div>
+<div id="tracks"></div>
 
 </div>
 
+<div id="playersScroller">
+<div id="playersArea"></div>
+</div>
 
-<!-- 시작 카운트다운 -->
+</div>
 
 <div id="countdownOverlay">
-
-    <div id="countdownText">
-        3
-    </div>
-
+<div id="countdownText">3</div>
 </div>
-
-
-<!-- 최종 결과 -->
 
 <div id="resultOverlay">
 
-    <div class="result-box">
+<div class="result-box">
 
-        <div class="result-title">
-            🏆 모두 도착!
-        </div>
+<div class="result-title">🏆 모두 도착!</div>
 
-        <div id="resultList"></div>
+<div id="resultList"></div>
 
-        <div class="result-actions">
-
-            <button id="againBtn">
-                같은 설정으로 다시
-            </button>
-
-            <button id="setupBtn">
-                설정 바꾸기
-            </button>
-
-        </div>
-
-    </div>
+<div class="result-actions">
+<button id="againBtn">다시 하기</button>
+<button id="setupBtn">설정 바꾸기</button>
+</div>
 
 </div>
 
-
+</div>
 
 <script>
 
-/* =========================================================
-   문제은행 120문제
-   [앞 문장, 뒤 문장, 정답]
-========================================================= */
+/* =====================================================
+   문제 120개
+===================================================== */
 
 const QUESTIONS = [
 
-/* =========================================================
-   그리고 40문제
-========================================================= */
-
-[
-    "나는 아침에 이를 닦았습니다.",
-    "세수도 했습니다.",
-    "그리고"
-],
-
-[
-    "민지는 도서관에서 책을 빌렸습니다.",
-    "책상에 앉아 책도 읽었습니다.",
-    "그리고"
-],
-
-[
-    "준호는 운동장에서 축구를 했습니다.",
-    "친구들과 줄넘기도 했습니다.",
-    "그리고"
-],
-
-[
-    "엄마는 거실을 청소하셨습니다.",
-    "창문도 닦으셨습니다.",
-    "그리고"
-],
-
-[
-    "나는 국어 숙제를 했습니다.",
-    "수학 숙제도 했습니다.",
-    "그리고"
-],
-
-[
-    "수아는 화분에 물을 주었습니다.",
-    "마른 잎도 떼어 냈습니다.",
-    "그리고"
-],
-
-[
-    "우리는 음악 시간에 노래를 불렀습니다.",
-    "노래에 맞추어 율동도 했습니다.",
-    "그리고"
-],
-
-[
-    "아빠는 시장에서 사과를 사셨습니다.",
-    "바나나도 사셨습니다.",
-    "그리고"
-],
-
-[
-    "나는 가방에 교과서를 넣었습니다.",
-    "필통도 넣었습니다.",
-    "그리고"
-],
-
-[
-    "지우는 친구에게 생일 카드를 주었습니다.",
-    "작은 선물도 건넸습니다.",
-    "그리고"
-],
-
-[
-    "우리는 박물관의 전시물을 보았습니다.",
-    "기념사진도 찍었습니다.",
-    "그리고"
-],
-
-[
-    "동생은 블록으로 집을 만들었습니다.",
-    "블록으로 자동차도 만들었습니다.",
-    "그리고"
-],
-
-[
-    "나는 색종이로 꽃을 접었습니다.",
-    "색연필로 꽃을 꾸몄습니다.",
-    "그리고"
-],
-
-[
-    "선생님은 칠판에 글을 쓰셨습니다.",
-    "그 옆에 그림도 그리셨습니다.",
-    "그리고"
-],
-
-[
-    "우리는 급식실에서 점심을 먹었습니다.",
-    "식판도 제자리에 정리했습니다.",
-    "그리고"
-],
-
-[
-    "서연이는 피아노를 연주했습니다.",
-    "노래도 불렀습니다.",
-    "그리고"
-],
-
-[
-    "나는 운동화를 신었습니다.",
-    "모자도 썼습니다.",
-    "그리고"
-],
-
-[
-    "할머니는 텃밭에서 상추를 따셨습니다.",
-    "고추도 따셨습니다.",
-    "그리고"
-],
-
-[
-    "우리는 교실 바닥을 쓸었습니다.",
-    "책상도 깨끗하게 닦았습니다.",
-    "그리고"
-],
-
-[
-    "민수는 일기를 썼습니다.",
-    "내일 준비물도 챙겼습니다.",
-    "그리고"
-],
-
-[
-    "나는 친구에게 인사했습니다.",
-    "오늘 기분도 물어보았습니다.",
-    "그리고"
-],
-
-[
-    "유나는 공원에서 자전거를 탔습니다.",
-    "놀이터에서 그네도 탔습니다.",
-    "그리고"
-],
-
-[
-    "동생은 그림을 그렸습니다.",
-    "그림에 스티커도 붙였습니다.",
-    "그리고"
-],
-
-[
-    "우리는 바닷가에서 모래성을 만들었습니다.",
-    "조개껍데기도 주웠습니다.",
-    "그리고"
-],
-
-[
-    "나는 손을 비누로 씻었습니다.",
-    "수건으로 손을 닦았습니다.",
-    "그리고"
-],
-
-[
-    "아빠는 자전거의 타이어를 살펴보셨습니다.",
-    "타이어에 공기도 넣으셨습니다.",
-    "그리고"
-],
-
-[
-    "우리는 학교 운동장을 한 바퀴 달렸습니다.",
-    "스트레칭도 했습니다.",
-    "그리고"
-],
-
-[
-    "예나는 책상 위를 정리했습니다.",
-    "책장도 정돈했습니다.",
-    "그리고"
-],
-
-[
-    "나는 종이비행기를 접었습니다.",
-    "친구와 함께 날려 보았습니다.",
-    "그리고"
-],
-
-[
-    "친구들은 교실을 꾸몄습니다.",
-    "칠판에 환영 글도 썼습니다.",
-    "그리고"
-],
-
-[
-    "나는 아침밥을 먹었습니다.",
-    "우유도 마셨습니다.",
-    "그리고"
-],
-
-[
-    "동생은 양말을 신었습니다.",
-    "운동화도 신었습니다.",
-    "그리고"
-],
-
-[
-    "우리는 과학 시간에 식물을 관찰했습니다.",
-    "관찰한 내용을 공책에 적었습니다.",
-    "그리고"
-],
-
-[
-    "선우는 발표 자료를 만들었습니다.",
-    "발표 연습도 했습니다.",
-    "그리고"
-],
-
-[
-    "나는 책을 다 읽었습니다.",
-    "독서 기록장도 썼습니다.",
-    "그리고"
-],
-
-[
-    "우리는 공원에서 산책했습니다.",
-    "벤치에 앉아 잠시 쉬었습니다.",
-    "그리고"
-],
-
-[
-    "엄마는 저녁밥을 준비하셨습니다.",
-    "식탁도 차리셨습니다.",
-    "그리고"
-],
-
-[
-    "나는 알람을 맞추었습니다.",
-    "내일 입을 옷도 꺼내 두었습니다.",
-    "그리고"
-],
-
-[
-    "지수는 교실 창문을 열었습니다.",
-    "커튼도 걷었습니다.",
-    "그리고"
-],
-
-[
-    "우리는 친구의 생일을 축하했습니다.",
-    "생일 축하 노래도 불렀습니다.",
-    "그리고"
-],
-
-
-/* =========================================================
-   그러나 40문제
-========================================================= */
-
-[
-    "비가 많이 내렸습니다.",
-    "운동회는 예정대로 열렸습니다.",
-    "그러나"
-],
-
-[
-    "나는 일찍 집에서 출발했습니다.",
-    "학교에 늦게 도착했습니다.",
-    "그러나"
-],
-
-[
-    "날씨가 매우 추웠습니다.",
-    "민수는 반팔 옷을 입고 밖에 나갔습니다.",
-    "그러나"
-],
-
-[
-    "수학 문제가 매우 어려웠습니다.",
-    "지수는 끝까지 포기하지 않고 풀었습니다.",
-    "그러나"
-],
-
-[
-    "동생은 몸집이 작았습니다.",
-    "무거운 상자를 혼자 들었습니다.",
-    "그러나"
-],
-
-[
-    "하늘은 맑았습니다.",
-    "바람은 매우 세게 불었습니다.",
-    "그러나"
-],
-
-[
-    "나는 열심히 달리기 연습을 했습니다.",
-    "경기 중에 넘어졌습니다.",
-    "그러나"
-],
-
-[
-    "책은 매우 두꺼웠습니다.",
-    "내용은 재미있어서 금방 읽었습니다.",
-    "그러나"
-],
-
-[
-    "수영장 물은 깊었습니다.",
-    "유나는 겁내지 않고 물에 들어갔습니다.",
-    "그러나"
-],
-
-[
-    "아침에는 비가 내렸습니다.",
-    "오후에는 날씨가 맑아졌습니다.",
-    "그러나"
-],
-
-[
-    "나는 우산을 챙겨 나갔습니다.",
-    "하루 종일 비가 오지 않았습니다.",
-    "그러나"
-],
-
-[
-    "가방은 매우 무거웠습니다.",
-    "수아는 혼자 가방을 들고 갔습니다.",
-    "그러나"
-],
-
-[
-    "연필은 아주 짧았습니다.",
-    "글씨는 잘 써졌습니다.",
-    "그러나"
-],
-
-[
-    "길이 매우 멀었습니다.",
-    "우리는 끝까지 걸어서 목적지에 도착했습니다.",
-    "그러나"
-],
-
-[
-    "영화는 두 시간이 넘도록 길었습니다.",
-    "나는 지루하지 않게 끝까지 보았습니다.",
-    "그러나"
-],
-
-[
-    "신발의 모양은 마음에 들었습니다.",
-    "내 발에는 너무 작았습니다.",
-    "그러나"
-],
-
-[
-    "공원에는 사람이 매우 많았습니다.",
-    "우리는 조용한 자리를 찾았습니다.",
-    "그러나"
-],
-
-[
-    "나는 매우 피곤했습니다.",
-    "숙제를 끝까지 마쳤습니다.",
-    "그러나"
-],
-
-[
-    "종이는 매우 얇았습니다.",
-    "쉽게 찢어지지 않았습니다.",
-    "그러나"
-],
-
-[
-    "꽃은 아주 작았습니다.",
-    "향기는 멀리까지 퍼졌습니다.",
-    "그러나"
-],
-
-[
-    "밖은 환했습니다.",
-    "교실 안은 커튼 때문에 어두웠습니다.",
-    "그러나"
-],
-
-[
-    "나는 발표 전에 많이 긴장했습니다.",
-    "발표를 끝까지 잘 마쳤습니다.",
-    "그러나"
-],
-
-[
-    "친구는 장난을 자주 쳤습니다.",
-    "친구와 한 약속은 꼭 지켰습니다.",
-    "그러나"
-],
-
-[
-    "운동장은 비에 젖어 있었습니다.",
-    "아이들은 운동장에서 공놀이를 했습니다.",
-    "그러나"
-],
-
-[
-    "나는 약속 장소에 일찍 도착했습니다.",
-    "친구는 아직 도착하지 않았습니다.",
-    "그러나"
-],
-
-[
-    "나무는 아주 오래되었습니다.",
-    "잎은 여전히 푸르고 싱싱했습니다.",
-    "그러나"
-],
-
-[
-    "버스가 곧 올 것이라고 생각했습니다.",
-    "버스는 한참 뒤에 도착했습니다.",
-    "그러나"
-],
-
-[
-    "나는 문제를 모두 풀었다고 생각했습니다.",
-    "마지막 한 문제가 남아 있었습니다.",
-    "그러나"
-],
-
-[
-    "수박의 크기는 매우 컸습니다.",
-    "들어 보니 생각보다 가벼웠습니다.",
-    "그러나"
-],
-
-[
-    "식당에는 손님이 매우 많았습니다.",
-    "주문한 음식은 금방 나왔습니다.",
-    "그러나"
-],
-
-[
-    "동생은 잠이 온다고 말했습니다.",
-    "잠자리에 가지 않고 계속 책을 읽었습니다.",
-    "그러나"
-],
-
-[
-    "노래는 처음에 매우 어려웠습니다.",
-    "몇 번 연습한 뒤에는 잘 부를 수 있었습니다.",
-    "그러나"
-],
-
-[
-    "바람이 매우 세게 불었습니다.",
-    "연은 높이 올라가지 못했습니다.",
-    "그러나"
-],
-
-[
-    "나는 길을 잘 안다고 생각했습니다.",
-    "결국 길을 잘못 들어섰습니다.",
-    "그러나"
-],
-
-[
-    "눈이 많이 내렸습니다.",
-    "학교는 정상적으로 수업을 했습니다.",
-    "그러나"
-],
-
-[
-    "방은 매우 작았습니다.",
-    "필요한 물건은 모두 들어 있었습니다.",
-    "그러나"
-],
-
-[
-    "비가 올 것처럼 하늘이 흐렸습니다.",
-    "끝내 비는 내리지 않았습니다.",
-    "그러나"
-],
-
-[
-    "달리기를 하다가 숨이 찼습니다.",
-    "나는 끝까지 멈추지 않고 달렸습니다.",
-    "그러나"
-],
-
-[
-    "문제의 글은 매우 길었습니다.",
-    "내용은 쉽게 이해할 수 있었습니다.",
-    "그러나"
-],
-
-[
-    "아침에는 날씨가 추웠습니다.",
-    "낮에는 기온이 크게 올라 따뜻해졌습니다.",
-    "그러나"
-],
-
-
-/* =========================================================
-   그래서 40문제
-========================================================= */
-
-[
-    "비가 많이 내렸습니다.",
-    "우산을 쓰고 밖에 나갔습니다.",
-    "그래서"
-],
-
-[
-    "나는 어젯밤에 늦게 잠들었습니다.",
-    "아침에 늦잠을 잤습니다.",
-    "그래서"
-],
-
-[
-    "배가 많이 고팠습니다.",
-    "밥을 먹었습니다.",
-    "그래서"
-],
-
-[
-    "날씨가 매우 추웠습니다.",
-    "두꺼운 외투를 입었습니다.",
-    "그래서"
-],
-
-[
-    "목이 많이 말랐습니다.",
-    "물을 마셨습니다.",
-    "그래서"
-],
-
-[
-    "나는 시험공부를 열심히 했습니다.",
-    "시험 문제를 잘 풀 수 있었습니다.",
-    "그래서"
-],
-
-[
-    "길에 얼음이 얼어 미끄러웠습니다.",
-    "천천히 조심해서 걸었습니다.",
-    "그래서"
-],
-
-[
-    "알람 소리를 듣지 못했습니다.",
-    "아침에 늦게 일어났습니다.",
-    "그래서"
-],
-
-[
-    "비가 그쳤습니다.",
-    "우리는 운동장에 나가 놀았습니다.",
-    "그래서"
-],
-
-[
-    "방 안이 너무 어두웠습니다.",
-    "전등을 켰습니다.",
-    "그래서"
-],
-
-[
-    "손에 흙이 많이 묻었습니다.",
-    "비누로 손을 깨끗이 씻었습니다.",
-    "그래서"
-],
-
-[
-    "운동장에서 오래 뛰었습니다.",
-    "땀이 많이 났습니다.",
-    "그래서"
-],
-
-[
-    "책의 내용이 아주 재미있었습니다.",
-    "끝까지 책을 읽었습니다.",
-    "그래서"
-],
-
-[
-    "연필심이 부러졌습니다.",
-    "연필을 다시 깎았습니다.",
-    "그래서"
-],
-
-[
-    "바람이 매우 강하게 불었습니다.",
-    "열려 있던 창문을 닫았습니다.",
-    "그래서"
-],
-
-[
-    "동생이 운동장에서 넘어졌습니다.",
-    "나는 동생을 일으켜 주었습니다.",
-    "그래서"
-],
-
-[
-    "우유가 바닥에 쏟아졌습니다.",
-    "걸레로 바닥을 닦았습니다.",
-    "그래서"
-],
-
-[
-    "숙제를 모두 끝냈습니다.",
-    "마음 편히 놀 수 있었습니다.",
-    "그래서"
-],
-
-[
-    "햇볕이 매우 강했습니다.",
-    "모자를 쓰고 밖에 나갔습니다.",
-    "그래서"
-],
-
-[
-    "휴대 전화의 배터리가 거의 남지 않았습니다.",
-    "충전기에 연결했습니다.",
-    "그래서"
-],
-
-[
-    "나는 가는 길을 몰랐습니다.",
-    "지도를 찾아보았습니다.",
-    "그래서"
-],
-
-[
-    "배가 계속 아팠습니다.",
-    "보건실에 갔습니다.",
-    "그래서"
-],
-
-[
-    "운동화 끈이 풀렸습니다.",
-    "걸음을 멈추고 끈을 다시 묶었습니다.",
-    "그래서"
-],
-
-[
-    "친구가 무거운 상자를 들기 힘들어했습니다.",
-    "내가 함께 상자를 들었습니다.",
-    "그래서"
-],
-
-[
-    "밤새 눈이 많이 내렸습니다.",
-    "아침에 길 위에 눈이 많이 쌓였습니다.",
-    "그래서"
-],
-
-[
-    "컵에 물을 가득 담았습니다.",
-    "물이 쏟아지지 않도록 천천히 걸었습니다.",
-    "그래서"
-],
-
-[
-    "다음 날 준비물이 많았습니다.",
-    "전날 저녁에 미리 가방을 챙겼습니다.",
-    "그래서"
-],
-
-[
-    "비밀번호가 기억나지 않았습니다.",
-    "선생님께 도움을 요청했습니다.",
-    "그래서"
-],
-
-[
-    "타려던 버스를 놓쳤습니다.",
-    "다음 버스를 기다렸습니다.",
-    "그래서"
-],
-
-[
-    "교실 안이 너무 더웠습니다.",
-    "창문을 열었습니다.",
-    "그래서"
-],
-
-[
-    "화분의 흙이 바싹 말랐습니다.",
-    "화분에 물을 주었습니다.",
-    "그래서"
-],
-
-[
-    "친구와 만나기로 약속했습니다.",
-    "약속 시간을 확인하고 집에서 출발했습니다.",
-    "그래서"
-],
-
-[
-    "사용하려던 종이가 심하게 구겨졌습니다.",
-    "새 종이를 꺼냈습니다.",
-    "그래서"
-],
-
-[
-    "친구의 목소리가 잘 들리지 않았습니다.",
-    "친구에게 조금 더 크게 말해 달라고 했습니다.",
-    "그래서"
-],
-
-[
-    "횡단보도의 신호등이 빨간불이었습니다.",
-    "길을 건너지 않고 기다렸습니다.",
-    "그래서"
-],
-
-[
-    "시험 문제를 모두 풀었습니다.",
-    "답을 처음부터 다시 확인했습니다.",
-    "그래서"
-],
-
-[
-    "공이 담장 밖으로 넘어갔습니다.",
-    "선생님께 말씀드렸습니다.",
-    "그래서"
-],
-
-[
-    "손에 비누 거품이 많이 남아 있었습니다.",
-    "물로 손을 깨끗이 헹구었습니다.",
-    "그래서"
-],
-
-[
-    "친구의 생일이 다가왔습니다.",
-    "축하 카드를 만들었습니다.",
-    "그래서"
-],
-
-[
-    "일기예보에서 오후에 비가 온다고 했습니다.",
-    "아침에 우산을 챙겨 나갔습니다.",
-    "그래서"
-]
+/* =====================================================
+   그리고 40개
+   반드시 뒤 문장에 '도'
+===================================================== */
+
+["나는 사과를 먹었습니다.","바나나도 먹었습니다.","그리고"],
+["나는 우유를 마셨습니다.","물도 마셨습니다.","그리고"],
+["민수는 축구를 했습니다.","농구도 했습니다.","그리고"],
+["지수는 책을 읽었습니다.","만화책도 읽었습니다.","그리고"],
+["나는 국어 숙제를 했습니다.","수학 숙제도 했습니다.","그리고"],
+["동생은 사과를 먹었습니다.","딸기도 먹었습니다.","그리고"],
+["우리는 노래를 불렀습니다.","춤도 추었습니다.","그리고"],
+["나는 연필을 샀습니다.","지우개도 샀습니다.","그리고"],
+["수아는 그림을 그렸습니다.","색칠도 했습니다.","그리고"],
+["아빠는 방을 청소하셨습니다.","거실도 청소하셨습니다.","그리고"],
+
+["나는 손을 씻었습니다.","얼굴도 씻었습니다.","그리고"],
+["민지는 피아노를 쳤습니다.","노래도 불렀습니다.","그리고"],
+["우리는 운동장을 달렸습니다.","줄넘기도 했습니다.","그리고"],
+["나는 김밥을 먹었습니다.","떡볶이도 먹었습니다.","그리고"],
+["준호는 책가방을 챙겼습니다.","필통도 챙겼습니다.","그리고"],
+["엄마는 사과를 사셨습니다.","배도 사셨습니다.","그리고"],
+["나는 친구에게 인사했습니다.","선생님께도 인사했습니다.","그리고"],
+["우리는 꽃을 보았습니다.","나무도 보았습니다.","그리고"],
+["동생은 장난감을 정리했습니다.","책도 정리했습니다.","그리고"],
+["나는 색종이를 접었습니다.","그림도 그렸습니다.","그리고"],
+
+["지우는 우유를 마셨습니다.","주스도 마셨습니다.","그리고"],
+["우리는 자전거를 탔습니다.","그네도 탔습니다.","그리고"],
+["나는 모자를 썼습니다.","장갑도 꼈습니다.","그리고"],
+["수지는 일기를 썼습니다.","독서록도 썼습니다.","그리고"],
+["아빠는 설거지를 하셨습니다.","쓰레기도 버리셨습니다.","그리고"],
+["우리는 상추를 심었습니다.","토마토도 심었습니다.","그리고"],
+["나는 강아지를 보았습니다.","고양이도 보았습니다.","그리고"],
+["친구는 축구공을 가져왔습니다.","농구공도 가져왔습니다.","그리고"],
+["나는 책상을 닦았습니다.","의자도 닦았습니다.","그리고"],
+["우리는 사진을 찍었습니다.","영상도 찍었습니다.","그리고"],
+
+["동생은 양말을 신었습니다.","신발도 신었습니다.","그리고"],
+["나는 밥을 먹었습니다.","국도 먹었습니다.","그리고"],
+["민지는 연필을 깎았습니다.","색연필도 깎았습니다.","그리고"],
+["우리는 노래를 들었습니다.","동화도 들었습니다.","그리고"],
+["나는 공책을 샀습니다.","색종이도 샀습니다.","그리고"],
+["선생님은 글을 쓰셨습니다.","그림도 그리셨습니다.","그리고"],
+["나는 운동화를 신었습니다.","모자도 썼습니다.","그리고"],
+["친구는 과자를 가져왔습니다.","사탕도 가져왔습니다.","그리고"],
+["우리는 박물관을 구경했습니다.","사진도 찍었습니다.","그리고"],
+["나는 방을 정리했습니다.","책상도 정리했습니다.","그리고"],
+
+
+/* =====================================================
+   그러나 40개
+   앞뒤가 확실히 반대
+===================================================== */
+
+["비가 많이 왔습니다.","나는 우산이 없었습니다.","그러나"],
+["날씨가 매우 추웠습니다.","민수는 반팔을 입었습니다.","그러나"],
+["나는 열심히 공부했습니다.","시험을 잘 보지 못했습니다.","그러나"],
+["수아는 많이 뛰었습니다.","하나도 힘들지 않았습니다.","그러나"],
+["밖은 아주 밝았습니다.","방 안은 어두웠습니다.","그러나"],
+["가방은 매우 무거웠습니다.","지수는 혼자 들었습니다.","그러나"],
+["동생은 몸집이 작았습니다.","힘은 아주 셌습니다.","그러나"],
+["문제가 아주 어려웠습니다.","민수는 혼자 풀었습니다.","그러나"],
+["책은 아주 두꺼웠습니다.","나는 금방 다 읽었습니다.","그러나"],
+["나는 일찍 집에서 나왔습니다.","학교에 늦었습니다.","그러나"],
+
+["비가 올 것 같았습니다.","비가 오지 않았습니다.","그러나"],
+["운동장은 젖어 있었습니다.","아이들은 운동장에서 놀았습니다.","그러나"],
+["나는 많이 피곤했습니다.","끝까지 숙제를 했습니다.","그러나"],
+["눈이 많이 왔습니다.","학교는 쉬지 않았습니다.","그러나"],
+["수영장 물이 깊었습니다.","지수는 무서워하지 않았습니다.","그러나"],
+["나는 우산을 가져갔습니다.","비가 오지 않았습니다.","그러나"],
+["신발은 아주 예뻤습니다.","내 발에는 너무 작았습니다.","그러나"],
+["음식은 아주 매웠습니다.","동생은 잘 먹었습니다.","그러나"],
+["길이 아주 멀었습니다.","우리는 끝까지 걸었습니다.","그러나"],
+["날씨가 더웠습니다.","민수는 긴팔 옷을 입었습니다.","그러나"],
+
+["나는 달리기 연습을 많이 했습니다.","경기에서 졌습니다.","그러나"],
+["공은 아주 작았습니다.","무게는 아주 무거웠습니다.","그러나"],
+["강아지는 몸집이 컸습니다.","아주 겁이 많았습니다.","그러나"],
+["시험 문제가 많았습니다.","민지는 빨리 다 풀었습니다.","그러나"],
+["나는 일찍 잠자리에 들었습니다.","아침에 늦게 일어났습니다.","그러나"],
+["바람이 세게 불었습니다.","나뭇잎은 움직이지 않았습니다.","그러나"],
+["동생은 잠이 온다고 했습니다.","잠을 자지 않았습니다.","그러나"],
+["수박은 아주 컸습니다.","생각보다 가벼웠습니다.","그러나"],
+["방은 아주 작았습니다.","물건은 많이 들어 있었습니다.","그러나"],
+["나는 길을 잘 안다고 생각했습니다.","길을 잃었습니다.","그러나"],
+
+["꽃은 아주 작았습니다.","향기는 아주 강했습니다.","그러나"],
+["아침에는 아주 추웠습니다.","낮에는 아주 따뜻했습니다.","그러나"],
+["나는 문제를 다 풀었다고 생각했습니다.","한 문제가 남아 있었습니다.","그러나"],
+["친구는 약속 시간보다 일찍 나왔습니다.","나보다 늦게 도착했습니다.","그러나"],
+["종이는 매우 얇았습니다.","쉽게 찢어지지 않았습니다.","그러나"],
+["영화는 아주 길었습니다.","나는 지루하지 않았습니다.","그러나"],
+["나는 발표 전에 많이 떨었습니다.","발표는 잘 끝냈습니다.","그러나"],
+["버스가 곧 올 줄 알았습니다.","한참 기다렸습니다.","그러나"],
+["운동화가 새것이었습니다.","신어 보니 발이 아팠습니다.","그러나"],
+["하늘에는 구름이 많았습니다.","비는 내리지 않았습니다.","그러나"],
+
+
+/* =====================================================
+   그래서 40개
+   원인 → 결과가 확실한 문장
+===================================================== */
+
+["배가 고팠습니다.","밥을 먹었습니다.","그래서"],
+["목이 말랐습니다.","물을 마셨습니다.","그래서"],
+["비가 왔습니다.","우산을 썼습니다.","그래서"],
+["날씨가 추웠습니다.","두꺼운 옷을 입었습니다.","그래서"],
+["날씨가 더웠습니다.","창문을 열었습니다.","그래서"],
+["방이 어두웠습니다.","불을 켰습니다.","그래서"],
+["손이 더러웠습니다.","손을 씻었습니다.","그래서"],
+["연필심이 부러졌습니다.","연필을 깎았습니다.","그래서"],
+["신발 끈이 풀렸습니다.","신발 끈을 묶었습니다.","그래서"],
+["책이 재미있었습니다.","끝까지 읽었습니다.","그래서"],
+
+["밤늦게 잠을 잤습니다.","아침에 늦게 일어났습니다.","그래서"],
+["비가 많이 왔습니다.","운동장에 물이 고였습니다.","그래서"],
+["눈이 많이 왔습니다.","길에 눈이 쌓였습니다.","그래서"],
+["많이 뛰었습니다.","땀이 났습니다.","그래서"],
+["배가 아팠습니다.","보건실에 갔습니다.","그래서"],
+["친구가 넘어졌습니다.","친구를 일으켜 주었습니다.","그래서"],
+["우유를 쏟았습니다.","걸레로 닦았습니다.","그래서"],
+["숙제를 다 했습니다.","밖에 나가 놀았습니다.","그래서"],
+["햇빛이 눈부셨습니다.","모자를 썼습니다.","그래서"],
+["비밀번호를 잊었습니다.","선생님께 물어보았습니다.","그래서"],
+
+["길을 몰랐습니다.","지도를 보았습니다.","그래서"],
+["버스를 놓쳤습니다.","다음 버스를 기다렸습니다.","그래서"],
+["화분의 흙이 말랐습니다.","물을 주었습니다.","그래서"],
+["교실이 더웠습니다.","에어컨을 켰습니다.","그래서"],
+["시험 문제가 어려웠습니다.","천천히 다시 읽었습니다.","그래서"],
+["종이가 찢어졌습니다.","새 종이를 꺼냈습니다.","그래서"],
+["물이 바닥에 쏟아졌습니다.","바닥을 닦았습니다.","그래서"],
+["친구의 목소리가 작았습니다.","더 크게 말해 달라고 했습니다.","그래서"],
+["신호등이 빨간불이었습니다.","멈춰서 기다렸습니다.","그래서"],
+["비가 올 것 같았습니다.","우산을 챙겼습니다.","그래서"],
+
+["시험을 열심히 준비했습니다.","문제를 잘 풀었습니다.","그래서"],
+["아침에 늦게 일어났습니다.","학교에 뛰어갔습니다.","그래서"],
+["배터리가 없었습니다.","충전기를 꽂았습니다.","그래서"],
+["공이 멀리 굴러갔습니다.","공을 가지러 갔습니다.","그래서"],
+["창문이 열려 있었습니다.","찬바람이 들어왔습니다.","그래서"],
+["친구의 생일이었습니다.","생일 카드를 만들었습니다.","그래서"],
+["운동화가 젖었습니다.","운동화를 말렸습니다.","그래서"],
+["책을 빌리고 싶었습니다.","도서관에 갔습니다.","그래서"],
+["연필을 잃어버렸습니다.","새 연필을 꺼냈습니다.","그래서"],
+["알람이 울렸습니다.","잠에서 깼습니다.","그래서"]
 
 ];
 
 
-/* =========================================================
-   기본 데이터
-========================================================= */
+/* =====================================================
+   기본 설정
+===================================================== */
 
-const CHARACTERS = [
-    "🐰",
-    "🐶",
-    "🐱",
-    "🐼",
-    "🦊"
-];
-
-const ANSWERS = [
-    "그리고",
-    "그러나",
-    "그래서"
-];
+const CHARACTERS = ["🐰","🐶","🐱","🐼","🦊"];
+const ANSWERS = ["그리고","그러나","그래서"];
 
 let playerCount = 1;
 let goalCount = 5;
-
 let players = [];
 
 let gameStartTime = 0;
 let timerInterval = null;
-
 let audioContext = null;
 
 
-/* =========================================================
-   음향
-========================================================= */
+/* =====================================================
+   효과음
+===================================================== */
 
 function getAudioContext() {
 
     if (!audioContext) {
-
         audioContext =
             new (
                 window.AudioContext ||
                 window.webkitAudioContext
             )();
-
     }
 
     return audioContext;
@@ -1734,133 +856,74 @@ function getAudioContext() {
 
 function tone(
     frequency,
-    duration = 0.15,
+    duration = .15,
     type = "sine",
-    volume = 0.18,
+    volume = .18,
     delay = 0
 ) {
 
     const ctx = getAudioContext();
 
-    const osc =
-        ctx.createOscillator();
-
-    const gain =
-        ctx.createGain();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
 
     osc.type = type;
     osc.frequency.value = frequency;
 
     gain.gain.setValueAtTime(
-        0.0001,
+        .0001,
         ctx.currentTime + delay
     );
 
     gain.gain.exponentialRampToValueAtTime(
         volume,
-        ctx.currentTime + delay + 0.015
+        ctx.currentTime + delay + .015
     );
 
     gain.gain.exponentialRampToValueAtTime(
-        0.0001,
+        .0001,
         ctx.currentTime + delay + duration
     );
 
     osc.connect(gain);
     gain.connect(ctx.destination);
 
-    osc.start(
-        ctx.currentTime + delay
-    );
-
-    osc.stop(
-        ctx.currentTime +
-        delay +
-        duration +
-        .03
-    );
+    osc.start(ctx.currentTime + delay);
+    osc.stop(ctx.currentTime + delay + duration + .03);
 }
 
 
-/* 카운트다운 */
 function playCountdownSound(number) {
 
     const frequencies = {
-        3: 440,
-        2: 500,
-        1: 580
+        3:440,
+        2:500,
+        1:580
     };
 
-    tone(
-        frequencies[number],
-        .16,
-        "sine",
-        .16
-    );
+    tone(frequencies[number],.16);
 }
 
 
-/* 출발 */
 function playStartSound() {
-
-    tone(
-        660,
-        .13,
-        "sine",
-        .18,
-        0
-    );
-
-    tone(
-        880,
-        .16,
-        "sine",
-        .18,
-        .11
-    );
-
-    tone(
-        1100,
-        .25,
-        "sine",
-        .20,
-        .23
-    );
+    tone(660,.13,"sine",.18,0);
+    tone(880,.16,"sine",.18,.11);
+    tone(1100,.25,"sine",.2,.23);
 }
 
 
-/* 첫 오답 */
 function playWrongSound() {
-
-    tone(
-        230,
-        .15,
-        "square",
-        .07,
-        0
-    );
-
-    tone(
-        180,
-        .20,
-        "square",
-        .06,
-        .13
-    );
+    tone(230,.15,"square",.07);
+    tone(180,.2,"square",.06,.13);
 }
 
 
-/* 출발점 복귀 */
 function playReturnSound() {
 
-    const ctx =
-        getAudioContext();
+    const ctx = getAudioContext();
 
-    const osc =
-        ctx.createOscillator();
-
-    const gain =
-        ctx.createGain();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
 
     osc.type = "sawtooth";
 
@@ -1875,7 +938,7 @@ function playReturnSound() {
     );
 
     gain.gain.setValueAtTime(
-        .10,
+        .1,
         ctx.currentTime
     );
 
@@ -1888,58 +951,25 @@ function playReturnSound() {
     gain.connect(ctx.destination);
 
     osc.start();
-
-    osc.stop(
-        ctx.currentTime + .9
-    );
+    osc.stop(ctx.currentTime + .9);
 }
 
 
-/* 결승 */
 function playFinishSound() {
-
-    tone(
-        523,
-        .16,
-        "sine",
-        .15,
-        0
-    );
-
-    tone(
-        659,
-        .16,
-        "sine",
-        .15,
-        .13
-    );
-
-    tone(
-        784,
-        .16,
-        "sine",
-        .17,
-        .26
-    );
-
-    tone(
-        1047,
-        .40,
-        "sine",
-        .20,
-        .39
-    );
+    tone(523,.16,"sine",.15);
+    tone(659,.16,"sine",.15,.13);
+    tone(784,.16,"sine",.17,.26);
+    tone(1047,.4,"sine",.2,.39);
 }
 
 
-/* =========================================================
-   유틸
-========================================================= */
+/* =====================================================
+   도구
+===================================================== */
 
 function shuffle(array) {
 
-    const result =
-        [...array];
+    const result = [...array];
 
     for (
         let i = result.length - 1;
@@ -1949,8 +979,7 @@ function shuffle(array) {
 
         const j =
             Math.floor(
-                Math.random() *
-                (i + 1)
+                Math.random() * (i + 1)
             );
 
         [
@@ -1971,25 +1000,18 @@ function sleep(ms) {
 
     return new Promise(
         resolve =>
-            setTimeout(
-                resolve,
-                ms
-            )
+            setTimeout(resolve,ms)
     );
 }
 
 
-function formatTime(milliseconds) {
+function formatTime(ms) {
 
     const totalTenths =
-        Math.floor(
-            milliseconds / 100
-        );
+        Math.floor(ms / 100);
 
     const minutes =
-        Math.floor(
-            totalTenths / 600
-        );
+        Math.floor(totalTenths / 600);
 
     const seconds =
         Math.floor(
@@ -2009,16 +1031,16 @@ function formatTime(milliseconds) {
 }
 
 
-/* =========================================================
+/* =====================================================
    게임 시작
-========================================================= */
+===================================================== */
 
 document
-    .getElementById("startBtn")
-    .addEventListener(
-        "click",
-        startGame
-    );
+.getElementById("startBtn")
+.addEventListener(
+    "click",
+    startGame
+);
 
 
 async function startGame() {
@@ -2026,47 +1048,32 @@ async function startGame() {
     playerCount =
         Number(
             document
-                .getElementById(
-                    "playerCount"
-                )
-                .value
+            .getElementById("playerCount")
+            .value
         );
 
     goalCount =
         Number(
             document
-                .getElementById(
-                    "goalCount"
-                )
-                .value
+            .getElementById("goalCount")
+            .value
         );
 
-    const ctx =
-        getAudioContext();
+    const ctx = getAudioContext();
 
-    if (
-        ctx.state === "suspended"
-    ) {
-
+    if (ctx.state === "suspended") {
         await ctx.resume();
-
     }
 
     buildGame();
 
     document
-        .getElementById(
-            "setupScreen"
-        )
-        .style.display =
-        "none";
+        .getElementById("setupScreen")
+        .style.display = "none";
 
     document
-        .getElementById(
-            "gameScreen"
-        )
-        .style.display =
-        "block";
+        .getElementById("gameScreen")
+        .style.display = "block";
 
     await startCountdown();
 
@@ -2074,42 +1081,26 @@ async function startGame() {
 }
 
 
-/* =========================================================
-   게임 구성
-========================================================= */
+/* =====================================================
+   게임 만들기
+===================================================== */
 
 function buildGame() {
 
-    clearInterval(
-        timerInterval
-    );
+    clearInterval(timerInterval);
 
     document
-        .getElementById(
-            "resultOverlay"
-        )
-        .classList
-        .remove(
-            "show"
-        );
-
+        .getElementById("resultOverlay")
+        .classList.remove("show");
 
     const tracks =
-        document
-            .getElementById(
-                "tracks"
-            );
+        document.getElementById("tracks");
 
     const playersArea =
-        document
-            .getElementById(
-                "playersArea"
-            );
-
+        document.getElementById("playersArea");
 
     tracks.innerHTML = "";
     playersArea.innerHTML = "";
-
 
     playersArea.style.setProperty(
         "--player-count",
@@ -2118,7 +1109,6 @@ function buildGame() {
 
     playersArea.dataset.count =
         playerCount;
-
 
     players = [];
 
@@ -2136,15 +1126,13 @@ function buildGame() {
                         length:
                             QUESTIONS.length
                     },
-                    (_, index) =>
-                        index
+                    (_,index) => index
                 )
             );
 
-
         const player = {
 
-            id: i,
+            id:i,
 
             name:
                 `${i + 1}번`,
@@ -2152,73 +1140,50 @@ function buildGame() {
             character:
                 CHARACTERS[i],
 
-            position: 0,
+            position:0,
 
-            wrongCount: 0,
+            wrongCount:0,
 
-            questionIndex:
-                null,
+            questionIndex:null,
 
-            questionOrder:
-                order,
+            questionOrder:order,
 
-            questionCursor:
-                0,
+            questionCursor:0,
 
-            locked:
-                true,
+            locked:true,
 
-            finished:
-                false,
+            finished:false,
 
-            finishTime:
-                null
+            finishTime:null
 
         };
 
 
-        players.push(
-            player
-        );
+        players.push(player);
 
-
-        createTrack(
-            player
-        );
-
-
-        createPlayerCard(
-            player
-        );
-
+        createTrack(player);
+        createPlayerCard(player);
     }
 }
 
 
-/* =========================================================
+/* =====================================================
    트랙
-========================================================= */
+===================================================== */
 
 function createTrack(player) {
 
     const row =
-        document
-            .createElement(
-                "div"
-            );
+        document.createElement("div");
 
     row.className =
         "track-row";
 
-
     row.innerHTML = `
 
         <div class="track-name">
-
             ${player.name}
-
         </div>
-
 
         <div class="track">
 
@@ -2235,38 +1200,28 @@ function createTrack(player) {
 
         </div>
 
-
         <div
             class="track-time"
             id="track-time-${player.id}"
         >
             00:00.0
         </div>
-
     `;
 
-
     document
-        .getElementById(
-            "tracks"
-        )
-        .appendChild(
-            row
-        );
+        .getElementById("tracks")
+        .appendChild(row);
 }
 
 
-/* =========================================================
-   플레이어 카드
-========================================================= */
+/* =====================================================
+   문제 카드
+===================================================== */
 
 function createPlayerCard(player) {
 
     const card =
-        document
-            .createElement(
-                "div"
-            );
+        document.createElement("div");
 
     card.className =
         "player-card";
@@ -2274,16 +1229,13 @@ function createPlayerCard(player) {
     card.id =
         `player-card-${player.id}`;
 
-
     card.innerHTML = `
 
         <div class="player-top">
 
             <div class="player-label">
-
                 ${player.character}
                 ${player.name}
-
             </div>
 
             <div
@@ -2294,7 +1246,6 @@ function createPlayerCard(player) {
             </div>
 
         </div>
-
 
         <div class="question-box">
 
@@ -2307,14 +1258,12 @@ function createPlayerCard(player) {
 
         </div>
 
-
         <div
             class="status"
             id="status-${player.id}"
         >
             준비하세요!
         </div>
-
 
         <div
             class="answers"
@@ -2329,15 +1278,12 @@ function createPlayerCard(player) {
                     data-player="${player.id}"
                     data-answer="${answer}"
                 >
-
                     ${answer}
-
                 </button>
 
             `).join("")}
 
         </div>
-
 
         <div
             class="penalty-overlay"
@@ -2355,7 +1301,6 @@ function createPlayerCard(player) {
                 class="penalty-text"
                 id="penalty-text-${player.id}"
             >
-                다시 읽어 보세요!
             </div>
 
             <div
@@ -2366,81 +1311,51 @@ function createPlayerCard(player) {
             </div>
 
         </div>
-
     `;
 
-
     document
-        .getElementById(
-            "playersArea"
-        )
-        .appendChild(
-            card
-        );
+        .getElementById("playersArea")
+        .appendChild(card);
 
 
     card
-        .querySelectorAll(
-            ".answer-btn"
-        )
-        .forEach(
-            button => {
+    .querySelectorAll(".answer-btn")
+    .forEach(button => {
 
-                button.addEventListener(
-                    "click",
-                    () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-                        answerQuestion(
-                            Number(
-                                button
-                                    .dataset
-                                    .player
-                            ),
-                            button
-                                .dataset
-                                .answer,
-                            button
-                        );
-
-                    }
+                answerQuestion(
+                    Number(
+                        button.dataset.player
+                    ),
+                    button.dataset.answer,
+                    button
                 );
-
             }
         );
+    });
 }
 
 
-/* =========================================================
+/* =====================================================
    시작 카운트다운
-========================================================= */
+===================================================== */
 
 async function startCountdown() {
 
     const overlay =
-        document
-            .getElementById(
-                "countdownOverlay"
-            );
+        document.getElementById(
+            "countdownOverlay"
+        );
 
     const text =
-        document
-            .getElementById(
-                "countdownText"
-            );
-
-
-    overlay
-        .classList
-        .add(
-            "show"
+        document.getElementById(
+            "countdownText"
         );
 
-
-    text
-        .classList
-        .remove(
-            "countdown-start"
-        );
+    overlay.classList.add("show");
 
 
     for (
@@ -2449,124 +1364,46 @@ async function startCountdown() {
         number--
     ) {
 
-        text.textContent =
-            number;
+        text.textContent = number;
 
+        playCountdownSound(number);
 
-        playCountdownSound(
-            number
-        );
-
-
-        text.animate(
-            [
-                {
-                    transform:
-                        "scale(.6)",
-                    opacity:
-                        .5
-                },
-
-                {
-                    transform:
-                        "scale(1.15)",
-                    opacity:
-                        1
-                },
-
-                {
-                    transform:
-                        "scale(1)",
-                    opacity:
-                        1
-                }
-            ],
-
-            {
-                duration:
-                    700
-            }
-        );
-
-
-        await sleep(
-            1000
-        );
+        await sleep(1000);
     }
 
 
     text.textContent =
         "시작!";
 
-
-    text
-        .classList
-        .add(
-            "countdown-start"
-        );
-
+    text.classList.add(
+        "countdown-start"
+    );
 
     playStartSound();
 
+    await sleep(700);
 
-    text.animate(
-        [
-            {
-                transform:
-                    "scale(.5)"
-            },
+    overlay.classList.remove("show");
 
-            {
-                transform:
-                    "scale(1.18)"
-            },
-
-            {
-                transform:
-                    "scale(1)"
-            }
-        ],
-
-        {
-            duration:
-                600
-        }
+    text.classList.remove(
+        "countdown-start"
     );
-
-
-    await sleep(
-        700
-    );
-
-
-    overlay
-        .classList
-        .remove(
-            "show"
-        );
 }
 
 
-/* =========================================================
+/* =====================================================
    경기 시작
-========================================================= */
+===================================================== */
 
 function beginRace() {
 
     gameStartTime =
         performance.now();
 
-
     players.forEach(
-        player => {
-
-            loadNewQuestion(
-                player
-            );
-
-        }
+        player =>
+            loadNewQuestion(player)
     );
-
 
     timerInterval =
         setInterval(
@@ -2576,55 +1413,35 @@ function beginRace() {
 }
 
 
-/* =========================================================
+/* =====================================================
    시간
-========================================================= */
+===================================================== */
 
 function updateTimers() {
 
     const now =
         performance.now();
 
+    players.forEach(player => {
 
-    players.forEach(
-        player => {
+        const elapsed =
+            player.finished
+            ? player.finishTime
+            : now - gameStartTime;
 
-            let elapsed;
-
-
-            if (
-                player.finished
-            ) {
-
-                elapsed =
-                    player.finishTime;
-
-            } else {
-
-                elapsed =
-                    now -
-                    gameStartTime;
-
-            }
-
-
-            document
-                .getElementById(
-                    `track-time-${player.id}`
-                )
-                .textContent =
-                formatTime(
-                    elapsed
-                );
-
-        }
-    );
+        document
+            .getElementById(
+                `track-time-${player.id}`
+            )
+            .textContent =
+            formatTime(elapsed);
+    });
 }
 
 
-/* =========================================================
-   문제 가져오기
-========================================================= */
+/* =====================================================
+   문제 선택
+===================================================== */
 
 function getNextQuestion(player) {
 
@@ -2640,148 +1457,110 @@ function getNextQuestion(player) {
                         length:
                             QUESTIONS.length
                     },
-
-                    (_, index) =>
-                        index
+                    (_,index) => index
                 )
             );
 
-        player.questionCursor =
-            0;
+        player.questionCursor = 0;
     }
-
 
     const index =
         player.questionOrder[
             player.questionCursor
         ];
 
-
     player.questionCursor++;
-
 
     return index;
 }
 
 
-/* =========================================================
+/* =====================================================
    새 문제
-========================================================= */
+===================================================== */
 
 function loadNewQuestion(player) {
 
-    if (
-        player.finished
-    ) {
-        return;
-    }
-
+    if (player.finished) return;
 
     player.questionIndex =
-        getNextQuestion(
-            player
-        );
+        getNextQuestion(player);
 
+    player.wrongCount = 0;
 
-    player.wrongCount =
-        0;
-
-
-    /* 새 문제에서는 모든 보기 다시 보이기 */
-    resetAnswerButtons(
-        player
-    );
-
+    resetAnswerButtons(player);
 
     const question =
         QUESTIONS[
             player.questionIndex
         ];
 
+    document
+        .getElementById(
+            `question-${player.id}`
+        )
+        .innerHTML = `
 
-    const questionElement =
-        document
-            .getElementById(
-                `question-${player.id}`
-            );
+            <div>
+                ${question[0]}
+            </div>
 
+            <div>
 
-    questionElement.innerHTML = `
+                <span class="blank">
+                    ______
+                </span>
 
-        <div>
-            ${question[0]}
-        </div>
+                ${question[1]}
 
-        <div>
+            </div>
+        `;
 
-            <span class="blank">
-                ______
-            </span>
-
-            ${question[1]}
-
-        </div>
-
-    `;
-
-
-    startReadingLock(
-        player
-    );
+    startReadingLock(player);
 }
 
 
-/* =========================================================
-   보기 초기화
-========================================================= */
+/* =====================================================
+   버튼 초기화
+===================================================== */
 
 function resetAnswerButtons(player) {
 
     const buttons =
         document
-            .getElementById(
-                `answers-${player.id}`
-            )
-            .querySelectorAll(
-                ".answer-btn"
-            );
+        .getElementById(
+            `answers-${player.id}`
+        )
+        .querySelectorAll(
+            ".answer-btn"
+        );
 
+    buttons.forEach(button => {
 
-    buttons.forEach(
-        button => {
-
-            button
-                .classList
-                .remove(
-                    "removed"
-                );
-
-        }
-    );
+        button
+            .classList
+            .remove("removed");
+    });
 }
 
 
-/* =========================================================
-   읽기 시간 3초
-========================================================= */
+/* =====================================================
+   읽기 3초
+===================================================== */
 
 async function startReadingLock(player) {
 
-    player.locked =
-        true;
-
+    player.locked = true;
 
     setButtonsEnabled(
         player,
         false
     );
 
-
     const status =
-        document
-            .getElementById(
-                `status-${player.id}`
-            );
+        document.getElementById(
+            `status-${player.id}`
+        );
 
 
     for (
@@ -2790,48 +1569,32 @@ async function startReadingLock(player) {
         number--
     ) {
 
-        if (
-            player.finished
-        ) {
-            return;
-        }
-
+        if (player.finished) return;
 
         status.textContent =
             `📖 문장을 읽어요 · ${number}`;
 
-
-        await sleep(
-            1000
-        );
+        await sleep(1000);
     }
 
 
-    if (
-        player.finished
-    ) {
-        return;
-    }
+    if (player.finished) return;
 
-
-    player.locked =
-        false;
-
+    player.locked = false;
 
     setButtonsEnabled(
         player,
         true
     );
 
-
     status.textContent =
-        "👉 알맞은 이어주는 말을 선택하세요!";
+        "👉 알맞은 말을 선택하세요!";
 }
 
 
-/* =========================================================
-   버튼 잠금
-========================================================= */
+/* =====================================================
+   버튼 활성화
+===================================================== */
 
 function setButtonsEnabled(
     player,
@@ -2840,38 +1603,31 @@ function setButtonsEnabled(
 
     const buttons =
         document
-            .getElementById(
-                `answers-${player.id}`
-            )
-            .querySelectorAll(
-                ".answer-btn"
-            );
+        .getElementById(
+            `answers-${player.id}`
+        )
+        .querySelectorAll(
+            ".answer-btn"
+        );
 
+    buttons.forEach(button => {
 
-    buttons.forEach(
-        button => {
+        if (
+            !button
+            .classList
+            .contains("removed")
+        ) {
 
-            if (
-                !button
-                    .classList
-                    .contains(
-                        "removed"
-                    )
-            ) {
-
-                button.disabled =
-                    !enabled;
-
-            }
-
+            button.disabled =
+                !enabled;
         }
-    );
+    });
 }
 
 
-/* =========================================================
-   답 선택
-========================================================= */
+/* =====================================================
+   정답 선택
+===================================================== */
 
 function answerQuestion(
     playerId,
@@ -2880,36 +1636,27 @@ function answerQuestion(
 ) {
 
     const player =
-        players[
-            playerId
-        ];
-
+        players[playerId];
 
     if (
         !player ||
         player.locked ||
         player.finished
     ) {
-
         return;
     }
 
-
-    player.locked =
-        true;
-
+    player.locked = true;
 
     setButtonsEnabled(
         player,
         false
     );
 
-
     const question =
         QUESTIONS[
             player.questionIndex
         ];
-
 
     const correctAnswer =
         question[2];
@@ -2920,9 +1667,7 @@ function answerQuestion(
         correctAnswer
     ) {
 
-        handleCorrect(
-            player
-        );
+        handleCorrect(player);
 
     } else {
 
@@ -2930,61 +1675,46 @@ function answerQuestion(
             player,
             clickedButton
         );
-
     }
 }
 
 
-/* =========================================================
-   정답 처리
-========================================================= */
+/* =====================================================
+   정답
+===================================================== */
 
 async function handleCorrect(player) {
 
     const card =
-        document
-            .getElementById(
-                `player-card-${player.id}`
-            );
-
-
-    card
-        .classList
-        .remove(
-            "wrong-flash"
+        document.getElementById(
+            `player-card-${player.id}`
         );
 
+    card.classList.remove(
+        "wrong-flash"
+    );
 
     void card.offsetWidth;
 
-
-    card
-        .classList
-        .add(
-            "correct-flash"
-        );
-
+    card.classList.add(
+        "correct-flash"
+    );
 
     player.position++;
 
-
-    updateProgress(
-        player
-    );
-
+    updateProgress(player);
 
     moveRunner(
         player,
         true
     );
 
-
     document
         .getElementById(
             `status-${player.id}`
         )
         .textContent =
-        "⭕ 맞았어요! 한 칸 앞으로!";
+        "⭕ 맞았어요! 앞으로!";
 
 
     if (
@@ -2992,32 +1722,22 @@ async function handleCorrect(player) {
         goalCount
     ) {
 
-        await sleep(
-            550
-        );
+        await sleep(550);
 
-        finishPlayer(
-            player
-        );
+        finishPlayer(player);
 
         return;
     }
 
+    await sleep(650);
 
-    await sleep(
-        650
-    );
-
-
-    loadNewQuestion(
-        player
-    );
+    loadNewQuestion(player);
 }
 
 
-/* =========================================================
-   오답 처리
-========================================================= */
+/* =====================================================
+   오답
+===================================================== */
 
 async function handleWrong(
     player,
@@ -3026,35 +1746,23 @@ async function handleWrong(
 
     player.wrongCount++;
 
-
     const card =
-        document
-            .getElementById(
-                `player-card-${player.id}`
-            );
-
-
-    card
-        .classList
-        .remove(
-            "wrong-flash"
+        document.getElementById(
+            `player-card-${player.id}`
         );
 
+    card.classList.remove(
+        "wrong-flash"
+    );
 
     void card.offsetWidth;
 
-
-    card
-        .classList
-        .add(
-            "wrong-flash"
-        );
+    card.classList.add(
+        "wrong-flash"
+    );
 
 
-    /* -----------------------------------------
-       첫 번째 오답
-       틀린 보기 삭제 + 3초 정지
-    ----------------------------------------- */
+    /* 첫 번째 오답 */
 
     if (
         player.wrongCount === 1
@@ -3062,14 +1770,9 @@ async function handleWrong(
 
         playWrongSound();
 
-
-        /* 누른 틀린 보기 즉시 제거 */
         clickedButton
             .classList
-            .add(
-                "removed"
-            );
-
+            .add("removed");
 
         await showPenalty(
             player,
@@ -3077,45 +1780,31 @@ async function handleWrong(
             "틀린 보기가 사라졌어요!"
         );
 
-
-        player.locked =
-            false;
-
+        player.locked = false;
 
         setButtonsEnabled(
             player,
             true
         );
 
-
         document
             .getElementById(
                 `status-${player.id}`
             )
             .textContent =
-            "남은 두 보기 중에서 다시 생각해 보세요!";
-
+            "남은 두 개 중에서 골라 보세요!";
 
         return;
     }
 
 
-    /* -----------------------------------------
-       두 번째 오답
-       출발점 복귀
-    ----------------------------------------- */
+    /* 두 번째 오답 */
 
     playReturnSound();
 
+    player.position = 0;
 
-    player.position =
-        0;
-
-
-    updateProgress(
-        player
-    );
-
+    updateProgress(player);
 
     moveRunner(
         player,
@@ -3123,23 +1812,19 @@ async function handleWrong(
         true
     );
 
-
     await showPenalty(
         player,
         "🚨",
-        "두 번 틀렸어요! 출발점으로 돌아갑니다!"
+        "출발점으로 돌아가요!"
     );
 
-
-    loadNewQuestion(
-        player
-    );
+    loadNewQuestion(player);
 }
 
 
-/* =========================================================
+/* =====================================================
    페널티
-========================================================= */
+===================================================== */
 
 async function showPenalty(
     player,
@@ -3148,43 +1833,30 @@ async function showPenalty(
 ) {
 
     const overlay =
-        document
-            .getElementById(
-                `penalty-${player.id}`
-            );
+        document.getElementById(
+            `penalty-${player.id}`
+        );
 
-    const iconElement =
-        document
-            .getElementById(
-                `penalty-icon-${player.id}`
-            );
-
-    const textElement =
-        document
-            .getElementById(
-                `penalty-text-${player.id}`
-            );
-
-    const countElement =
-        document
-            .getElementById(
-                `penalty-count-${player.id}`
-            );
-
-
-    iconElement.textContent =
+    document
+        .getElementById(
+            `penalty-icon-${player.id}`
+        )
+        .textContent =
         icon;
 
-
-    textElement.textContent =
+    document
+        .getElementById(
+            `penalty-text-${player.id}`
+        )
+        .textContent =
         text;
 
-
-    overlay
-        .classList
-        .add(
-            "show"
+    const count =
+        document.getElementById(
+            `penalty-count-${player.id}`
         );
+
+    overlay.classList.add("show");
 
 
     for (
@@ -3193,27 +1865,20 @@ async function showPenalty(
         number--
     ) {
 
-        countElement.textContent =
+        count.textContent =
             number;
 
-
-        await sleep(
-            1000
-        );
+        await sleep(1000);
     }
 
 
-    overlay
-        .classList
-        .remove(
-            "show"
-        );
+    overlay.classList.remove("show");
 }
 
 
-/* =========================================================
-   진행도
-========================================================= */
+/* =====================================================
+   진행 표시
+===================================================== */
 
 function updateProgress(player) {
 
@@ -3226,9 +1891,9 @@ function updateProgress(player) {
 }
 
 
-/* =========================================================
+/* =====================================================
    캐릭터 이동
-========================================================= */
+===================================================== */
 
 function moveRunner(
     player,
@@ -3237,11 +1902,9 @@ function moveRunner(
 ) {
 
     const runner =
-        document
-            .getElementById(
-                `runner-${player.id}`
-            );
-
+        document.getElementById(
+            `runner-${player.id}`
+        );
 
     const percentage =
         Math.min(
@@ -3253,161 +1916,103 @@ function moveRunner(
         );
 
 
-    if (
-        returning
-    ) {
-
-        runner
-            .classList
-            .add(
-                "returning"
-            );
-
+    if (returning) {
+        runner.classList.add(
+            "returning"
+        );
     } else {
-
-        runner
-            .classList
-            .remove(
-                "returning"
-            );
-
+        runner.classList.remove(
+            "returning"
+        );
     }
 
 
-    /* 결승 깃발을 가리지 않도록 약간 여유 */
     runner.style.left =
-        `${percentage * 0.94}%`;
+        `${percentage * .94}%`;
 
 
-    if (
-        jump
-    ) {
+    if (jump) {
 
-        runner
-            .classList
-            .add(
-                "jump"
-            );
-
+        runner.classList.add(
+            "jump"
+        );
 
         setTimeout(
-            () => {
-
+            () =>
                 runner
-                    .classList
-                    .remove(
-                        "jump"
-                    );
-
-            },
+                .classList
+                .remove("jump"),
             350
         );
-
     }
 
 
-    if (
-        returning
-    ) {
+    if (returning) {
 
         setTimeout(
-            () => {
-
+            () =>
                 runner
-                    .classList
-                    .remove(
-                        "returning"
-                    );
-
-            },
+                .classList
+                .remove("returning"),
             1200
         );
-
     }
 }
 
 
-/* =========================================================
-   결승 도착
-========================================================= */
+/* =====================================================
+   도착
+===================================================== */
 
 function finishPlayer(player) {
 
-    if (
-        player.finished
-    ) {
-        return;
-    }
+    if (player.finished) return;
 
-
-    player.finished =
-        true;
-
-
-    player.locked =
-        true;
-
+    player.finished = true;
+    player.locked = true;
 
     player.finishTime =
         performance.now() -
         gameStartTime;
-
 
     setButtonsEnabled(
         player,
         false
     );
 
-
     moveRunner(
         player,
         true
     );
 
-
     playFinishSound();
 
 
     const card =
-        document
-            .getElementById(
-                `player-card-${player.id}`
-            );
-
-
-    card
-        .classList
-        .add(
-            "finish-card"
+        document.getElementById(
+            `player-card-${player.id}`
         );
 
+    card
+        .querySelector(
+            ".question-box"
+        )
+        .innerHTML = `
 
-    const questionBox =
-        card
-            .querySelector(
-                ".question-box"
-            );
+            <div class="finish-message">
 
+                🎉 결승점 도착!
 
-    questionBox.innerHTML = `
-
-        <div class="finish-message">
-
-            🎉 결승점 도착!
-
-            <div class="finish-time-big">
-
-                ${
-                    formatTime(
-                        player.finishTime
-                    )
-                }
+                <div class="finish-time-big">
+                    ${
+                        formatTime(
+                            player.finishTime
+                        )
+                    }
+                </div>
 
             </div>
-
-        </div>
-
-    `;
+        `;
 
 
     document
@@ -3415,13 +2020,12 @@ function finishPlayer(player) {
             `status-${player.id}`
         )
         .textContent =
-        "🏆 멋지게 완주했습니다!";
+        "🏆 잘했어요!";
 
 
     if (
         players.every(
-            player =>
-                player.finished
+            p => p.finished
         )
     ) {
 
@@ -3429,59 +2033,49 @@ function finishPlayer(player) {
             timerInterval
         );
 
-
         setTimeout(
             showFinalResult,
             1000
         );
-
     }
 }
 
 
-/* =========================================================
+/* =====================================================
    결과
-========================================================= */
+===================================================== */
 
 function showFinalResult() {
 
     const sorted =
         [...players]
-            .sort(
-                (a,b) =>
-                    a.finishTime -
-                    b.finishTime
-            );
+        .sort(
+            (a,b) =>
+                a.finishTime -
+                b.finishTime
+        );
 
-
-    const list =
-        document
-            .getElementById(
-                "resultList"
-            );
-
-
-    list.innerHTML =
+    document
+        .getElementById(
+            "resultList"
+        )
+        .innerHTML =
         sorted.map(
             player => `
 
                 <div class="result-row">
 
                     <span>
-
                         ${player.character}
                         ${player.name}
-
                     </span>
 
                     <span>
-
                         ${
                             formatTime(
                                 player.finishTime
                             )
                         }
-
                     </span>
 
                 </div>
@@ -3494,64 +2088,38 @@ function showFinalResult() {
         .getElementById(
             "resultOverlay"
         )
-        .classList
-        .add(
-            "show"
-        );
+        .classList.add("show");
 }
 
 
-/* =========================================================
-   같은 설정으로 다시
-========================================================= */
+/* =====================================================
+   다시 하기
+===================================================== */
 
 document
-    .getElementById(
-        "againBtn"
-    )
-    .addEventListener(
-        "click",
-        async () => {
+.getElementById("againBtn")
+.addEventListener(
+    "click",
+    async () => {
 
-            const ctx =
-                getAudioContext();
+        buildGame();
 
+        document
+            .getElementById(
+                "resultOverlay"
+            )
+            .classList.remove("show");
 
-            if (
-                ctx.state ===
-                "suspended"
-            ) {
+        await startCountdown();
 
-                await ctx.resume();
-
-            }
-
-
-            buildGame();
+        beginRace();
+    }
+);
 
 
-            document
-                .getElementById(
-                    "resultOverlay"
-                )
-                .classList
-                .remove(
-                    "show"
-                );
-
-
-            await startCountdown();
-
-
-            beginRace();
-
-        }
-    );
-
-
-/* =========================================================
-   설정 화면
-========================================================= */
+/* =====================================================
+   처음 화면
+===================================================== */
 
 function backToSetup() {
 
@@ -3559,16 +2127,11 @@ function backToSetup() {
         timerInterval
     );
 
-
     document
         .getElementById(
             "resultOverlay"
         )
-        .classList
-        .remove(
-            "show"
-        );
-
+        .classList.remove("show");
 
     document
         .getElementById(
@@ -3576,7 +2139,6 @@ function backToSetup() {
         )
         .style.display =
         "none";
-
 
     document
         .getElementById(
@@ -3588,56 +2150,27 @@ function backToSetup() {
 
 
 document
-    .getElementById(
-        "setupBtn"
-    )
-    .addEventListener(
-        "click",
-        backToSetup
-    );
+.getElementById("setupBtn")
+.addEventListener(
+    "click",
+    backToSetup
+);
 
 
 document
-    .getElementById(
-        "quitBtn"
-    )
-    .addEventListener(
-        "click",
-        () => {
-
-            if (
-                confirm(
-                    "게임을 끝내고 처음 화면으로 돌아갈까요?"
-                )
-            ) {
-
-                backToSetup();
-
-            }
-
-        }
-    );
-
-
-/* =========================================================
-   화면 크기 변경
-========================================================= */
-
-window.addEventListener(
-    "resize",
+.getElementById("quitBtn")
+.addEventListener(
+    "click",
     () => {
 
-        players.forEach(
-            player => {
+        if (
+            confirm(
+                "게임을 끝내고 처음으로 돌아갈까요?"
+            )
+        ) {
 
-                moveRunner(
-                    player,
-                    false
-                );
-
-            }
-        );
-
+            backToSetup();
+        }
     }
 );
 
